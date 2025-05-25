@@ -1,18 +1,16 @@
-package com.example.demo.entities;
+package com.example.demo.dtos;
 
 public class LoginRequest {
 	private String username;
-	private String password;
-	public LoginRequest() {
-		super();
+    private String password;
+    public LoginRequest() {
+		// TODO Auto-generated constructor stub
 	}
-	
 	public LoginRequest(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
 	}
-
 	public String getUsername() {
 		return username;
 	}
@@ -25,5 +23,5 @@ public class LoginRequest {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+    
 }

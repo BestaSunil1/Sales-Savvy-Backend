@@ -1,4 +1,4 @@
-package com.example.demo.controllers;
+package com.example.demo.controller;
 
 import java.util.Map;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entities.User;
-import com.example.demo.services.UserService;
+import com.example.demo.entity.User;
+import com.example.demo.service.UserService;
 
 @RestController
 @CrossOrigin
@@ -27,7 +27,7 @@ public class RegistrationController {
 	@PostMapping("/register")
 	public ResponseEntity<?> registrationUser(@RequestBody User user) {
 		try {
-			User registeredUser = userService.userRegistration(user);
+			User registeredUser = userService.registerUser(user);
 			return ResponseEntity.ok(Map.of("message", "userRegisteredSuccessfully", "user", registeredUser));
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
